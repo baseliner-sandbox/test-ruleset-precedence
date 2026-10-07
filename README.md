@@ -35,11 +35,17 @@ On a free org, making the repo private causes both endpoints to return
 this feature."* The configuration still exists; it cannot be read and is not
 enforced.
 
-**4. Changing repo visibility destroys classic branch protection** (reproduced
-2/2). Before: `approvals=1 enforce_admins=true checks=1`. After a
+**4. On a free org, changing repo visibility destroys classic branch protection**
+(reproduced 2/2). Before: `approvals=1 enforce_admins=true checks=1`. After a
 private → public round-trip: `404 Branch not protected`. Rulesets survive the
 same toggle. No warning is given, and the trigger is an administrative action
 unrelated to branch protection.
+
+*Paid-plan data point, 2026-10-07:* on a **GitHub Team** org the same protection
+survived the same round trip (2/2) and stayed readable while private:
+`approvals=1 enforce_admins=true checks=1` before, while private, and after. The
+test used a throwaway repo, deleted afterwards. So this finding is the free
+tier's forced removal on the way to private, never restored on the way back.
 
 **5. Required-check app pinning uses different field names** in each system:
 rulesets use `integration_id`, classic protection uses `app_id`.
