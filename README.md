@@ -1,8 +1,12 @@
 # test-ruleset-precedence
 
-Throwaway repo used to verify how GitHub reports branch protection when classic
-branch protection and repository rulesets both exist. Kept as reproducible
-evidence. **Safe to delete.**
+Repo used to verify how GitHub reports branch protection when classic branch
+protection and repository rulesets both exist. It is the evidence for
+[Your branch protection is not where you think it is](https://cameronbrooks11.github.io/devops/2026/09/12/branch-protection-is-not-where-you-think/).
+**Do not delete:** the post links here.
+
+Corrections, counter-examples and paid-plan data points are welcome as
+[issues](https://github.com/baseliner-sandbox/test-ruleset-precedence/issues).
 
 Tested 2026-09-12 against a **free** org (`baseliner-sandbox`).
 
